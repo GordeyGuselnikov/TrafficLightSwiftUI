@@ -14,7 +14,7 @@ struct CircleLightView: View {
     var body: some View {
         Circle()
             .foregroundColor(color)
-            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+            .frame(width: 100, height: 100)
             .opacity(opacity)
             .shadow(color: .gray, radius: 8)
     }

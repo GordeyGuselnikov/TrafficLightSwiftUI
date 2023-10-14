@@ -14,7 +14,7 @@ struct ButtonView: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title)
         }
         .padding()
         .foregroundColor(.white)

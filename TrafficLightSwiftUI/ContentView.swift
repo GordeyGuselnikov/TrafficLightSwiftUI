@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var greenLightOpacity = 0.2
     
     @State private var currentLight = CurrentLight.red
+
+    @State private var buttonTitle = "START"
     
     var body: some View {
         VStack {
@@ -26,17 +28,16 @@ struct ContentView: View {
             
             Spacer()
             
-            ButtonView(title: "START") {
-                print("test")
+            ButtonView(title: buttonTitle) {
+                buttonTitle = "NEXT"
                 switchLight()
             }
-            
         }
-        
         .padding()
     }
     
     private func switchLight() {
+        
         let lightIsOn = 1.0
         let lightIsOff = 0.3
         
