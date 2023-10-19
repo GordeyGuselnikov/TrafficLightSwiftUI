@@ -12,6 +12,7 @@ enum CurrentLight {
 }
 
 struct ContentView: View {
+    
     @State private var redLightOpacity = 0.2
     @State private var yellowLightOpacity = 0.2
     @State private var greenLightOpacity = 0.2
@@ -21,7 +22,7 @@ struct ContentView: View {
     @State private var buttonTitle = "START"
     
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             CircleLightView(color: .red, opacity: redLightOpacity)
             CircleLightView(color: .yellow, opacity: yellowLightOpacity)
             CircleLightView(color: .green, opacity: greenLightOpacity)
@@ -29,7 +30,9 @@ struct ContentView: View {
             Spacer()
             
             ButtonView(title: buttonTitle) {
-                buttonTitle = "NEXT"
+                if buttonTitle == "START" {
+                    buttonTitle = "NEXT"
+                }
                 switchLight()
             }
         }
